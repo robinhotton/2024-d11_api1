@@ -11,6 +11,29 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 - **Python 3.8+**
 - **Git & Github**
 
+## Architecture
+
+Le projet est structuré de la manière suivante :
+
+```bash
+2024-d11_api1/
+│
+├── src/
+│   ├── main.py            # Point d'entrée principal de l'application
+│   ├── database.py        # Configuration et gestion de la base de données
+│   ├── models.py          # Définition des modèles de données (tables)
+│   ├── Repositories/      # Contient les classes pour accéder aux données (logique d'accès à la BDD)
+│   ├── services/          # Contient la logique métier de l'application
+│   ├── schemas/           # Définitions des schémas de validation des données (Pydantic)
+│   └── routers/           # Contient les routes API (endpoints)
+│
+├── .gitignore             # Fichier de configuration Git pour ignorer certains fichiers/dossiers
+├── README.md              # Documentation du projet
+├── requirements.txt       # Liste des dépendances du projet
+├── .venv/                 # Environnement virtuel Python
+└── .env                   # Fichier de configuration des variables d'environnement
+```
+
 ## Installation
 
 ### 1. Cloner le projet
