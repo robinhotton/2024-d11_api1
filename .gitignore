@@ -2,7 +2,6 @@
 annexes
 
 # environment
-.env
 .venv
 
 # python cache & ide
