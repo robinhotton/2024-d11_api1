@@ -1,4 +1,4 @@
-from src.models import Client
+from ..models import Client
 from sqlalchemy.orm import Session
 
 class ClientRepository:

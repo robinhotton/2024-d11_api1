@@ -1,4 +1,4 @@
-from src.repositories.client_repository import ClientRepository
+from ..repositories import ClientRepository
 
 class ClientService:
 
