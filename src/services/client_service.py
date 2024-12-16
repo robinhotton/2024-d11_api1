@@ -1,4 +1,12 @@
-from src.repositories.client_repository import get_all_clients
+from src.repositories.client_repository import ClientRepository
 
-def get_all(db):
-    return get_all_clients(db)
+class ClientService:
+
+    @staticmethod
+    def get_all_clients(db):
+        return ClientRepository.get_all_clients(db)
+    
+    @staticmethod
+    def get_client_by_id(db, id):
+        return ClientRepository.get_client_by_id(db, id)
+    

@@ -1,8 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from src.database import get_db
-from src.models import Client
-from src.services.client_service import get_all
+from src.services.client_service import ClientService
 
 
 router_client = APIRouter(prefix="/client", tags=["Client"])
@@ -10,12 +9,13 @@ router_client = APIRouter(prefix="/client", tags=["Client"])
 
 @router_client.get("/")
 def get_clients(db: Session = Depends(get_db)):
-    try:
-        return get_all(db)
-    except:
-        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR)
+    return ClientService.get_all_clients(db)
 
 
 @router_client.get("/{id}")
 def get_client_by_id(id: int, db: Session = Depends(get_db)):
-    return db.query(Client).get(id)
+    try:
+        return ClientService.get_client_by_id(db, id)
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+    
