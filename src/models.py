@@ -10,7 +10,7 @@ Base = declarative_base()
 class Client(Base):
 	__tablename__ = "t_client"
 
-	codcli = Column(Integer,primary_key=True)
+	codcli = Column(Integer, primary_key=True)
 	genrecli = Column(String(8), default=None)
 	nomcli = Column(String(40), default=None, index=True)
 	prenomcli = Column(String(30), default=None)
