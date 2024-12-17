@@ -4,6 +4,7 @@ annexes
 # environment
 .venv
 .env
+test.db
 
 # python cache & ide
 __pycache__

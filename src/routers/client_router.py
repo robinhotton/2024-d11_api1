@@ -25,7 +25,7 @@ def get_client_by_id(id: int, db: Session = Depends(get_db)):
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Id not found")
 
 
-@router_client.post("/", response_model=ClientDB)
+@router_client.post("/", response_model=ClientDB, status_code=status.HTTP_201_CREATED)
 def create_client(donnees_client: ClientSchema, db: Session = Depends(get_db)):
     return create(db, donnees_client)
 
