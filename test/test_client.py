@@ -9,7 +9,7 @@ client = TestClient(app)
 
 
 def test_get_all_clients():
-    response = client.get("/clients/")
+    response = client.get("/client/")
     assert response.status_code == 200 # success
     assert isinstance(response.json(), list)
     

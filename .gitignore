@@ -3,6 +3,7 @@ annexes
 
 # environment
 .venv
+.env
 
 # python cache & ide
 __pycache__
