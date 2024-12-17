@@ -8,7 +8,7 @@ def get_all_clients(db: Session):
 
 def get_client_by_id(db: Session, id: int):
     return db.query(Client).get(id)
-    # return db.query(Client).filter(Client.codcli == id)
+    # return db.query(Client).filter(Client.codcli == id).first()
 
 
 
