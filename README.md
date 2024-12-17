@@ -82,6 +82,12 @@ Pour démarrer le serveur de développement, exécutez la commande suivante :
 uvicorn src.main:app --reload
 ```
 
+alternativement, vous pouvez exécuter le script `run.py` pour démarrer le serveur :
+
+```bash
+python run.py
+```
+
 Cela démarrera le serveur FastAPI via uvicorn, accessible à l'adresse suivante : [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## Utilisation
