@@ -90,6 +90,14 @@ Une fois le serveur démarré, vous pouvez accéder à la documentation interact
 
 Cette interface vous permettra de tester les différentes API de manière simple et intuitive.
 
+## Lancement des tests
+
+Pour lancer les tests, exécutez la commande suivante :
+
+```bash
+pytest
+```
+
 ## Auteur
 
 **Robin Hotton**  
