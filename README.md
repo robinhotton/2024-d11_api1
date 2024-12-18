@@ -27,6 +27,10 @@ Le projet est structuré de la manière suivante :
 │   ├── schemas/           # Définitions des schémas de validation des données (Pydantic)
 │   └── routers/           # Contient les routes API (endpoints)
 │
+├── test/
+│   ├── __init__.py        # Fichier d'initialisation des tests
+│   └── test_client.py     # Tests des routes API du client
+│
 ├── .gitignore             # Fichier de configuration Git pour ignorer certains fichiers/dossiers
 ├── README.md              # Documentation du projet
 ├── requirements.txt       # Liste des dépendances du projet
