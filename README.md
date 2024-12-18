@@ -72,7 +72,7 @@ pip install -r requirements.txt
 ### 4. Configuration
 
 1. Créez une base de données avec votre Système de Gestion de Base de Données (SGDB) préféré.
-2. Modifiez la **connection string** dans le fichier `database.py` pour vous connecter à votre base de données.
+2. Modifiez les **variables d'environnement** dans le fichier `.env` pour vous connecter à votre base de données.
 
 ### 5. Lancer le serveur
 
@@ -98,11 +98,18 @@ Cette interface vous permettra de tester les différentes API de manière simple
 
 ## Lancement des tests
 
-Pour lancer les tests, exécutez la commande suivante :
+Pour lancer les tests, exécutez simplement la commande suivante dans votre terminal :
 
 ```bash
 pytest
 ```
+
+### Informations complémentaires
+
+- **Emplacement des tests** : Tous les tests sont situés dans le dossier `tests/`.
+- **Serveur** : Il n'est pas nécessaire de démarrer le serveur pour exécuter les tests. Les tests sont exécutés directement via des requêtes HTTP simulées.
+- **Base de données de test** : Les tests utilisent une base de données SQLite qui est stockée dans le fichier `test.db`. Cela permet de tester sans interférer avec la base de données de développement ou de production.
+- **Isolation des tests** : Chaque test utilise une nouvelle instance de la base de données afin d'assurer l'isolement des tests et de garantir des résultats cohérents.
 
 ## Auteur
 

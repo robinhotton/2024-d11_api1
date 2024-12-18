@@ -1,40 +1,42 @@
-from src.models import Client
 from sqlalchemy.orm import Session
+from ..models import Client
+from typing import List
 
 
-def get_all_clients(db: Session):
-    return list(db.query(Client).all())
+class ClientRepository:
+
+    @staticmethod
+    def get_all_clients(db: Session) -> List[Client]:
+        return list(db.query(Client).all())
 
 
-def get_client_by_id(db: Session, id: int):
-    return db.query(Client).get(id)
-    # return db.query(Client).filter(Client.codcli == id).first()
+    @staticmethod
+    def get_client_by_id(db: Session, id: int) -> Client:
+        return db.query(Client).get(id)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def create_client(db: Session, donnees_client: dict):
-    client = Client(**donnees_client)
-    db.add(client)
-    db.commit()
-    db.refresh(client)
-    return client
+    @staticmethod
+    def create_client(db: Session, donnees_client: dict) -> Client:
+        client = Client(**donnees_client)
+        db.add(client)
+        db.commit()
+        db.refresh(client)
+        return client
+    
+    
+    @staticmethod
+    def patch_client_by_id(db: Session, id: int, donnees_client: dict) -> Client:
+        client = db.query(Client).get(id)
+        for key, value in donnees_client.items():
+            setattr(client, key, value)
+        db.commit()
+        db.refresh(client)
+        return client
+    
+    
+    @staticmethod
+    def delete_client_by_id(db: Session, id: int) -> Client:
+        client = db.query(Client).get(id)
+        db.delete(client)
+        db.commit()
+        return client

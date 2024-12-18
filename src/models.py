@@ -10,17 +10,14 @@ Base = declarative_base()
 class Client(Base):
 	__tablename__ = "t_client"
 
-	codcli = Column(Integer, primary_key=True)
-	genrecli = Column(String(8), default=None)
-	nomcli = Column(String(40), default=None, index=True)
-	prenomcli = Column(String(30), default=None)
-	adresse1cli = Column(String(50), default=None)
-	adresse2cli = Column(String(50), default=None)
-	adresse3cli = Column(String(50), default=None)
-	# villecli_id = Column(Integer,ForeignKey('t_communes.id'))
-	telcli = Column(String(10), default=None)
-	emailcli = Column(String(255), default=None)
-	portcli = Column(String(10), default=None)
+	id = Column(Integer, primary_key=True)
+	nom = Column(String(40), index=True)
+	prenom = Column(String(30))
+	genre = Column(String(8), default=None)
+	adresse = Column(String(50))
+	complement_adresse = Column(String(50), default=None)
+	tel = Column(String(10), default=None)
+	email = Column(String(255), default=None)
 	newsletter = Column(Integer, default=0)
 
 
@@ -29,15 +26,11 @@ class Commande(Base):
 
 	codcde = Column(Integer,primary_key=True)
 	datcde = Column(Date)
-	codcli = Column(Integer,ForeignKey('t_client.codcli'))
+	codcli = Column(Integer,ForeignKey('t_client.id'))
 	timbrecli = Column(Float)
 	timbrecde = Column(Float)
-	# nbcolis = Column(Integer, default=1)
 	cheqcli = Column(Float)
-	# idcondit = Column(Integer, default=0)
 	cdeComt = Column(String(255), default=None)
-	# barchive = Column(Integer, default=0)
-	# bstock = Column(Integer, default=0)
 
 	__table_args__ = (Index('commmande_index', "cdeComt", "codcli"),)
 
@@ -51,12 +44,7 @@ class Objet(Base):
 	puobj = Column(Numeric, default=0.0000)
 	poidsobj = Column(Numeric, default=0.0000)
 	indispobj = Column(Integer, default=0)
-	# o_imp = Column(Integer, default=0)
-	# o_aff = Column(Integer, default=0)
-	# o_cartp = Column(Integer, default=0)
 	points = Column(Integer, default=0)
-	# o_ordre_aff = Column(Integer, default=0)
-	# condit = relationship("ObjetCond",back_populates='objets')
 
 
 class Detail(Base):
@@ -66,6 +54,5 @@ class Detail(Base):
 	codcde = Column(Integer,ForeignKey('t_entcde.codcde'), index=True)
 	objet_id = Column(Integer, ForeignKey('t_objet.codobj'))
 	qte = Column(Integer, default=1)
-	# colis = Column(Integer, default=1)
 	commentaire = Column(String(100), default=None)
  
