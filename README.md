@@ -104,6 +104,15 @@ Pour lancer les tests, exécutez la commande suivante :
 pytest
 ```
 
+## Différentes versions du projet
+
+Il y a plusieurs branches dans ce dépôt, chacune représentant une version différente du projet :
+
+- **main** : version de base du projet (sans classes et imports relatifs)
+- **classe** : ancienne version du projet utilisant des classes pour la logique métier
+- **class__import__** : ancienne version du projet utilisant des classes et des imports relatifs
+- **final** : version la plus avancée du projet utilisant classes et imports relatifs. Il y a aussi une gestion poussée des services et des tests d'intégration.
+
 ## Auteur
 
 **Robin Hotton**  
