@@ -11,27 +11,6 @@ def get_client_by_id(db: Session, id: int):
     # return db.query(Client).filter(Client.codcli == id).first()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def create_client(db: Session, donnees_client: dict):
     client = Client(**donnees_client)
     db.add(client)

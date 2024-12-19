@@ -1,12 +1,20 @@
 # spécifique au projet
 annexes
+*.csv
+*.docx
 
-# environment
+# environments
 .venv
 .env
+
+# tests
+.pytest_cache
 test.db
 
-# python cache & ide
+# python cache
 __pycache__
+*.pyc
+
+# IDE
 .idea
 .vscode

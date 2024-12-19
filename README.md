@@ -2,7 +2,25 @@
 
 ## Description
 
-Ce projet est un exemple d'application utilisant **FastAPI** et **SQLAlchemy**. Il a été développé dans le cadre de la session 2024-D11 de Diginamic, une formation en **cybersécurité** appliquée, utilisant des technologies comme **Bash** et **Python**.
+Ce projet est un exemple d'api utilisant **FastAPI** et **SQLAlchemy**. Il a été développé dans le cadre de la session 2024-D11 de Diginamic, une formation en **cybersécurité** appliquée, utilisant des technologies comme **Bash** et **Python**.
+
+Le sujet est appliqué sur le projet **Digicheese** qui est une application de gestion de la fidélisation d'une fromagerie. L'API permet de gérer les clients, les produits et les commandes.
+
+## Sommaire
+
+- [Prérequis](#prérequis)
+- [Dépendances](#dépendances)
+- [Architecture](#architecture)
+- [Installation](#installation)
+  - [1. Cloner le projet](#1-cloner-le-projet)
+  - [2. Créer un environnement virtuel](#2-créer-un-environnement-virtuel)
+  - [3. Installer les dépendances](#3-installer-les-dépendances)
+  - [4. Configuration](#4-configuration)
+  - [5. Lancer le serveur](#5-lancer-le-serveur)
+- [Utilisation](#utilisation)
+- [Lancement des tests](#lancement-des-tests)
+- [Différentes versions du projet](#différentes-versions-du-projet)
+- [Auteur](#auteur)
 
 ## Prérequis
 
@@ -10,6 +28,18 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 - **Python 3.8+**
 - **Git & Github**
+
+## Dépendances
+
+Les dépendances du projet sont les suivantes :
+
+- **FastAPI** : Framework web moderne pour construire des APIs avec Python 3.6+.
+- **uvicorn** : Serveur pour démarrer l'application FastAPI.
+- **Pydantic** : Bibliothèque pour la validation des données et la sérialisation des données.
+- **SQLAlchemy** : Outil SQL flexible et puissant pour Python.
+- **pymysql** : Pilote MySQL pour Python.
+- **python-dotenv** : Module permettant de charger des variables d'environnement à partir d'un fichier `.env`.
+- **pytest & httpx** : Framework de test pour Python.
 
 ## Architecture
 
@@ -100,6 +130,17 @@ Une fois le serveur démarré, vous pouvez accéder à la documentation interact
 
 Cette interface vous permettra de tester les différentes API de manière simple et intuitive.
 
+### Endpoint
+
+- **/clients** : Gestion des clients (CRUD)
+  - **GET** : Récupérer tous les clients
+  - **GET** : Récupérer un client par son ID
+  - **POST** : Créer un nouveau client
+  - **PUT** : Mettre à jour un client
+  - **DELETE** : Supprimer un client
+
+Les autres endpoints (objets, commandes) arriveront prochainement.
+
 ## Lancement des tests
 
 Pour lancer les tests, exécutez la commande suivante :
@@ -107,6 +148,8 @@ Pour lancer les tests, exécutez la commande suivante :
 ```bash
 pytest
 ```
+
+Cela lancera tous les tests unitaires et les tests d'intégration du projet contenu dans le dossier **test/**.
 
 ## Différentes versions du projet
 
